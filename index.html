@@ -7,7 +7,100 @@
 <title>KALIGRAFI QUEST 🐰</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-*{box-sizing:border-box}
+*{box-sizing:border-box} 
+  
+<!-- KALIGRAFI QUEST: CALM CUTE MUSIC -->
+<style>
+  #musicBtn {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9999;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 12px 17px;
+    background: linear-gradient(135deg, #ffd6e7, #dcd6ff);
+    color: #704d75;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px #b99ab955;
+  }
+</style>
+
+<button id="musicBtn" onclick="toggleCuteMusic()">
+  🎵 Mainkan muzik
+</button>
+
+<script>
+let audioContext;
+let musicTimer;
+let musicPlaying = false;
+let noteIndex = 0;
+
+const melody = [
+  523.25, 659.25, 783.99, 659.25,
+  587.33, 659.25, 523.25, 392.00,
+  440.00, 523.25, 659.25, 523.25,
+  493.88, 440.00, 392.00, 440.00
+];
+
+function playCuteNote(frequency) {
+  if (!audioContext) return;
+
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+
+  oscillator.type = "sine";
+  oscillator.frequency.value = frequency;
+
+  gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+  gain.gain.exponentialRampToValueAtTime(
+    0.055, audioContext.currentTime + 0.08
+  );
+  gain.gain.exponentialRampToValueAtTime(
+    0.0001, audioContext.currentTime + 1.1
+  );
+
+  oscillator.connect(gain);
+  gain.connect(audioContext.destination);
+
+  oscillator.start();
+  oscillator.stop(audioContext.currentTime + 1.15);
+}
+
+function toggleCuteMusic() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
+  const button = document.getElementById("musicBtn");
+
+  if (musicPlaying) {
+    clearInterval(musicTimer);
+    musicPlaying = false;
+    button.textContent = "🎵 Mainkan muzik";
+    return;
+  }
+
+  musicPlaying = true;
+  button.textContent = "🔇 Matikan muzik";
+
+  playCuteNote(melody[noteIndex]);
+
+  musicTimer = setInterval(() => {
+    playCuteNote(melody[noteIndex]);
+    noteIndex = (noteIndex + 1) % melody.length;
+  }, 650);
+}
+</script>
+</body>
+</html>
+
 body{margin:0;font-family:Nunito,sans-serif;color:#62516f;background:linear-gradient(135deg,#fff0f6,#edf5ff,#f5efff);min-height:100vh}
 header{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:#ffffffb9;position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
 .logo{font-size:20px;font-weight:900;color:#a66e9d}
