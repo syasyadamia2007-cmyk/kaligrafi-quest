@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KALIGRAFI QUEST 🐰</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box}
+body{margin:0;font-family:Nunito,sans-serif;color:#62516f;background:linear-gradient(135deg,#fff0f6,#edf5ff,#f5efff);min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:#ffffffb9;position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
+.logo{font-size:20px;font-weight:900;color:#a66e9d}
+.logo span{font-size:27px}
+button{border:0;border-radius:15px;padding:12px 19px;font-family:inherit;font-weight:900;cursor:pointer;transition:.2s}
+button:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(120deg,#efacd0,#b9a8ed);color:white;box-shadow:0 5px 15px #c69acb55}
+.white{background:white;color:#806b91}
+.page{max-width:1100px;margin:auto;padding:25px}
+.hidden{display:none!important}
+.hero{margin-top:25px;padding:45px;border-radius:30px;background:linear-gradient(120deg,#ffdfed,#e4e0ff,#dff1ff);display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 12px 35px #a98ab522;overflow:hidden}
+.hero h1{font-size:clamp(38px,6vw,65px);line-height:1;margin:12px 0;color:#785a89}
+.hero p{line-height:1.8;max-width:500px;color:#806d8c}
+.bunny{font-size:clamp(110px,19vw,190px);animation:float 3s infinite ease-in-out;filter:drop-shadow(0 10px 8px #b99acb55)}
+@keyframes float{50%{transform:translateY(-14px) rotate(4deg)}}
+.tag{background:#ffffffa8;border-radius:30px;padding:8px 14px;font-size:12px;font-weight:900;letter-spacing:1px}
+.section-title{margin:35px 0 15px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:#ffffffd9;padding:22px;border-radius:23px;box-shadow:0 8px 25px #a98ab51c;border:1px solid white}
+.card h3{margin:8px 0}.card p{color:#96879e;font-size:14px;line-height:1.6}
+.icon{font-size:34px}
+.login{max-width:440px;margin:35px auto;background:white;padding:30px;border-radius:27px;box-shadow:0 10px 35px #a98ab522}
+input,textarea{width:100%;padding:14px;border:1px solid #eaddeb;border-radius:13px;margin:9px 0 16px;font:inherit}
+.roles{display:flex;gap:8px;margin:15px 0}
+.role{flex:1;background:#f6effa;color:#806b91;padding:12px 5px}
+.role.active{background:#eadbfa;outline:2px solid #bd9dd6}
+.dashboard{background:linear-gradient(110deg,#ffe4ef,#e9e4ff);border-radius:25px;padding:25px;display:flex;justify-content:space-between;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:17px 0}
+.stat{background:white;padding:16px;border-radius:18px;text-align:center}
+.stat strong{font-size:25px;display:block}.stat small{color:#9a8ba2;font-weight:800}
+.missions{display:grid;gap:12px}
+.mission{display:flex;align-items:center;gap:15px;background:white;padding:17px;border-radius:19px}
+.num{background:#f2e5fa;width:42px;height:42px;border-radius:14px;display:grid;place-items:center;font-weight:900;flex-shrink:0}
+.mission-info{flex:1}.mission-info small{color:#a091a8}
+.panel{background:white;border-radius:25px;padding:25px;margin-top:20px;box-shadow:0 8px 25px #a98ab51c}
+.empty{border:2px dashed #ddcce9;border-radius:20px;padding:35px;text-align:center;background:#fffaff}
+.sample{padding:16px;margin:10px 0;background:#fff7fb;border:1px solid #f1dfeb;border-radius:13px;font-size:20px}
+.neat{font-family:Georgia,serif;font-style:italic;color:#526b7c;letter-spacing:.5px}
+.untidy{font-size:22px;letter-spacing:3px;color:#a47f8e;transform:rotate(-1deg)}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.options button{background:#f0e9fa;color:#756184}
+.options button:hover{background:#e3d4f5}
+.check{display:flex;gap:10px;margin:15px 0;align-items:center}
+.check input{width:auto;margin:0}
+footer{text-align:center;color:#a99aad;padding:35px;font-size:12px}
+@media(max-width:700px){.hero{flex-direction:column;text-align:center;padding:28px}.cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.mission{flex-wrap:wrap}.mission button{margin-left:55px}.dashboard{gap:10px}.bunny{font-size:120px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo"><span>✒️</span> KALIGRAFI QUEST</div>
+<button class="white" onclick="home()">🏠 Utama</button>
+</header>
+
+<main class="page">
+<section id="home">
+<div class="hero">
+<div>
+<span class="tag">🌷 PENGEMBARAAN AGEN AKSARA</span>
+<h1>KALIGRAFI<br>QUEST</h1>
+<p>Misi: Selamatkan Warisan Tulisan Berangkai! Sertai Kiko meneroka dunia aksara melalui pembelajaran, permainan dan cabaran kreatif.</p>
+<button class="primary" onclick="showLogin()">🚀 MULA PENGEMBARAAN</button>
+</div>
+<div class="bunny">🐰</div>
+</div>
+<h2 class="section-title">✨ Apa yang menanti awak?</h2>
+<div class="cards">
+<div class="card"><div class="icon">📚</div><h3>Belajar bersama Kiko</h3><p>Kenali ciri dan teknik tulisan berangkai.</p></div>
+<div class="card"><div class="icon">🎮</div><h3>Cabaran interaktif</h3><p>Selesaikan misi dan uji kemahiran.</p></div>
+<div class="card"><div class="icon">🏆</div><h3>Ganjaran istimewa</h3><p>Kumpul XP dan lencana Agen Aksara.</p></div>
+</div>
+</section>
+
+<section id="login" class="hidden">
+<div class="login">
+<button class="white" onclick="home()">← Kembali</button>
+<div style="text-align:center;font-size:65px;margin:10px">🐰</div>
+<h2 style="text-align:center">Hai, Agen Aksara!</h2>
+<p style="text-align:center;color:#a091a8">Pilih peranan untuk memasuki dunia Kiko.</p>
+<div class="roles">
+<button class="role active" onclick="choose(this,'Murid')">🎒 Murid</button>
+<button class="role" onclick="choose(this,'Guru')">🍎 Guru</button>
+<button class="role" onclick="choose(this,'Admin')">⚙️ Admin</button>
+</div>
+<label>Nama pengguna</label>
+<input id="username" placeholder="Masukkan nama">
+<label>Kod akses</label>
+<input id="password" type="password" placeholder="Masukkan kod akses">
+<button class="primary" style="width:100%" onclick="login()">MASUK ✨</button>
+<p id="error" style="color:#d16c9c;font-size:13px"></p>
+<p style="font-size:11px;color:#a99aad">Demo: Murid KQ2026 · Guru GURU-KQ · Admin ADMIN-KQ</p>
+</div>
+</section>
+
+<section id="dashboard" class="hidden">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h2>Dashboard Agen 🌸</h2><button class="white" onclick="home()">Log keluar</button>
+</div>
+<div class="dashboard">
+<div><span class="tag">SELAMAT KEMBALI!</span><h2 id="welcome">Hai, Agen!</h2><p>Teruskan pengembaraan bersama Kiko.</p></div>
+<div style="font-size:65px">🐰</div>
+</div>
+<div id="student">
+<div class="stats">
+<div class="stat"><strong id="xp">120</strong><small>⭐ XP</small></div>
+<div class="stat"><strong>🌱 1</strong><small>TAHAP</small></div>
+<div class="stat"><strong id="progress">0/6</strong><small>MISI SELESAI</small></div>
+<div class="stat"><strong>🏅 2</strong><small>LENCANA</small></div>
+</div>
+<h2 class="section-title">🗺️ Peta Misi Agen Aksara</h2>
+<div class="missions" id="missionList"></div>
+</div>
+<div id="teacher" class="hidden panel"><h2>🍎 Pusat Pemantauan Guru</h2><p>Ruang melihat kemajuan murid, hasil puisi, markah dan senarai semak 5S.</p><div class="empty">📊 Data murid akan dipaparkan selepas pangkalan data dalam talian disambungkan.</div></div>
+<div id="admin" class="hidden panel"><h2>⚙️ Panel Admin</h2><p>Pengurusan akaun, kandungan pembelajaran dan sistem aplikasi.</p><div class="empty">🔐 Ruang pengurusan sistem.</div></div>
+</section>
+
+<section id="activity" class="hidden">
+<button class="white" onclick="dashboard()">← Dashboard</button>
+<div class="panel">
+<span class="tag" id="phase">FASA 1</span>
+<h2 id="activityTitle"></h2>
+<p id="activityDesc"></p>
+<div id="activityContent"></div>
+<button id="finish" class="primary" onclick="finish()">TANDAKAN SELESAI ✓</button>
+</div>
+</section>
+</main>
+<footer>🐰 KALIGRAFI QUEST · Dunia Aksara · Belajar dengan ceria!</footer>
+
+<script>
+let selected='Murid',user='',xp=120,done=[];
+const data=[
+['📚','Pusat Pembelajaran','Nota dan video pembelajaran tulisan berangkai.','<div class="empty"><div class="icon">🎬</div><h3>Ruang Nota & Video</h3><p>Bahan pembelajaran akan dimasukkan di sini kemudian.</p><b>Menunggu bahan dimuat naik</b></div>'],
+['🎮','Akademi Aksara','Permainan membentuk huruf dan menyambung huruf.','<div class="empty"><div class="icon">✍️</div><h3>Ruang Permainan Digital</h3><p>Jejak Bentuk Huruf dan Sambung Huruf akan dimasukkan di sini.</p><b>Menunggu permainan dimuat naik</b></div>'],
+['🔎','Detektif Tulisan','Kenal pasti contoh tulisan yang lebih kemas.','<div id="quiz"><h3>Soalan 1: Pilih tulisan yang lebih kemas.</h3><div class="sample neat">Bunga berkembang di taman.</div><div class="sample untidy">Bunga berkembang di taman.</div><div class="options"><button onclick="answer(true)">Contoh pertama</button><button onclick="answer(false)">Contoh kedua</button></div><p id="feedback"></p></div>'],
+['🏡','Ekspedisi Aksara','Cari contoh tulisan tangan dalam kehidupan sebenar di rumah.','<div class="empty">📸 <h3>Misi lapangan</h3><p>Cari nota, kad ucapan atau resipi keluarga. Minta izin sebelum mengambil gambar. Perhatikan bentuk huruf dan sambungannya.</p></div><textarea placeholder="Catat pemerhatian awak..."></textarea>'],
+['📝','Misi Puisi Berangkai','Salin puisi menggunakan tulisan berangkai pada kertas.','<div class="empty">📷 <h3>Serahan hasil puisi</h3><p>Ruang muat naik gambar akan diaktifkan selepas storan dalam talian disambungkan.</p></div>'],
+['🏅','Penilaian Agen Aksara','Semak hasil tulisan menggunakan senarai semak 5S.','<h3>Senarai Semak 5S</h3><label class="check"><input type="checkbox"> Susunan – Tulisan tersusun.</label><label class="check"><input type="checkbox"> Sambungan – Huruf disambungkan dengan sesuai.</label><label class="check"><input type="checkbox"> Salinan – Puisi disalin dengan tepat.</label><label class="check"><input type="checkbox"> Saiz – Saiz huruf konsisten.</label><label class="check"><input type="checkbox"> Senang dibaca – Tulisan jelas dan mudah dibaca.</label><textarea placeholder="Refleksi: Apakah yang telah saya pelajari?"></textarea>']
+];
+function hide(){['home','login','dashboard','activity'].forEach(id=>document.getElementById(id).classList.add('hidden'))}
+function home(){hide();document.getElementById('home').classList.remove('hidden')}
+function showLogin(){hide();document.getElementById('login').classList.remove('hidden')}
+function choose(el,r){selected=r;document.querySelectorAll('.role').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+function login(){let n=document.getElementById('username').value.trim(),p=document.getElementById('password').value;let codes={Murid:'KQ2026',Guru:'GURU-KQ',Admin:'ADMIN-KQ'};if(!n||p!==codes[selected]){document.getElementById('error').textContent='Nama atau kod akses tidak tepat. Cuba lagi ya!';return}user=n;dashboard()}
+function dashboard(){hide();document.getElementById('dashboard').classList.remove('hidden');document.getElementById('welcome').textContent='Hai, '+user+'! 🌷';['student','teacher','admin'].forEach(x=>document.getElementById(x).classList.add('hidden'));document.getElementById(selected.toLowerCase()).classList.remove('hidden');if(selected==='Murid')render()}
+function render(){document.getElementById('xp').textContent=xp;document.getElementById('progress').textContent=done.length+'/6';document.getElementById('missionList').innerHTML=data.map((d,i)=>`<div class="mission"><div class="num">${i+1}</div><div class="mission-info"><b>${d[0]} ${d[1]}</b><br><small>Fasa ${i+1} · ${done.includes(i)?'Selesai ✓':'Belum selesai'}</small></div><button class="primary" onclick="openActivity(${i})">${done.includes(i)?'Lihat':'Masuk'}</button></div>`).join('')}
+let current=0,q=1;
+function openActivity(i){current=i;hide();document.getElementById('activity').classList.remove('hidden');document.getElementById('phase').textContent='FASA '+(i+1);document.getElementById('activityTitle').textContent=data[i][0]+' '+data[i][1];document.getElementById('activityDesc').textContent=data[i][2];document.getElementById('activityContent').innerHTML=data[i][3];document.getElementById('finish').style.display=i===2?'none':'inline-block'}
+function answer(ok){let f=document.getElementById('feedback');if(ok){f.textContent='Betul! Contoh pertama lebih kemas. 🌟';f.style.color='green';document.getElementById('finish').style.display='inline-block'}else{f.textContent='Cuba lagi! Perhatikan bentuk huruf dan jarak perkataan.';f.style.color='#c56b91'}}
+function finish(){if(!done.includes(current)){done.push(current);xp+=20}dashboard()}
+home();
+</script>
+</body>
+</html>
